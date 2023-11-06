@@ -33,11 +33,16 @@
             this.TINHTRANGbt = new System.Windows.Forms.Button();
             this.KHACHHANGbt = new System.Windows.Forms.Button();
             this.SANPHAMbt = new System.Windows.Forms.Button();
-            this.panel_Body = new System.Windows.Forms.Panel();
             this.panel_Top = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel_Body = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel_Menu.SuspendLayout();
             this.panel_Top.SuspendLayout();
+            this.panel_Body.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_Menu
@@ -49,9 +54,9 @@
             this.panel_Menu.Controls.Add(this.SANPHAMbt);
             this.panel_Menu.Controls.Add(this.panel_Top);
             this.panel_Menu.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel_Menu.Location = new System.Drawing.Point(912, 0);
+            this.panel_Menu.Location = new System.Drawing.Point(906, 0);
             this.panel_Menu.Name = "panel_Menu";
-            this.panel_Menu.Size = new System.Drawing.Size(262, 652);
+            this.panel_Menu.Size = new System.Drawing.Size(262, 528);
             this.panel_Menu.TabIndex = 0;
             // 
             // TAOPHIEUTHUEbt
@@ -102,17 +107,9 @@
             this.SANPHAMbt.UseVisualStyleBackColor = true;
             this.SANPHAMbt.Click += new System.EventHandler(this.SANPHAMbt_Click);
             // 
-            // panel_Body
-            // 
-            this.panel_Body.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_Body.Location = new System.Drawing.Point(0, 0);
-            this.panel_Body.Name = "panel_Body";
-            this.panel_Body.Size = new System.Drawing.Size(912, 652);
-            this.panel_Body.TabIndex = 1;
-            // 
             // panel_Top
             // 
-            this.panel_Top.BackgroundImage = global::QLThue.Properties.Resources.hutao;
+            this.panel_Top.BackgroundImage = global::QLThue.Properties.Resources._10000007_48e72913_;
             this.panel_Top.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel_Top.Controls.Add(this.label1);
             this.panel_Top.Dock = System.Windows.Forms.DockStyle.Top;
@@ -131,19 +128,69 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Thông tin nhân viên";
             // 
+            // panel_Body
+            // 
+            this.panel_Body.BackColor = System.Drawing.Color.Transparent;
+            this.panel_Body.BackgroundImage = global::QLThue.Properties.Resources.lumine;
+            this.panel_Body.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel_Body.Controls.Add(this.panel1);
+            this.panel_Body.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_Body.Location = new System.Drawing.Point(0, 0);
+            this.panel_Body.Name = "panel_Body";
+            this.panel_Body.Size = new System.Drawing.Size(906, 528);
+            this.panel_Body.TabIndex = 1;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Bisque;
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.ForeColor = System.Drawing.SystemColors.Control;
+            this.panel1.Location = new System.Drawing.Point(0, 449);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(906, 79);
+            this.panel1.TabIndex = 1;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Constantia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label4.Location = new System.Drawing.Point(307, 49);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(308, 21);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Sinh viên thực hiện : Huỳnh Long Vũ";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label3.Location = new System.Drawing.Point(156, 16);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(593, 32);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "PHẦN MỀM QUẢN LÝ CHO THUÊ ĐỒ CƯỚI";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1174, 652);
+            this.ClientSize = new System.Drawing.Size(1168, 528);
             this.Controls.Add(this.panel_Body);
             this.Controls.Add(this.panel_Menu);
             this.Name = "Form2";
-            this.Text = "Form2";
+            this.Text = "Trang thông tin";
             this.panel_Menu.ResumeLayout(false);
             this.panel_Top.ResumeLayout(false);
             this.panel_Top.PerformLayout();
+            this.panel_Body.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -158,5 +205,8 @@
         private System.Windows.Forms.Button SANPHAMbt;
         private System.Windows.Forms.Panel panel_Body;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
     }
 }

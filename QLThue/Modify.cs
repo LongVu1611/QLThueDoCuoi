@@ -61,6 +61,34 @@ namespace QLThue
             }
             return dataTable;
         }
+        public DataTable GetAllChiTietPhieuThue()
+        {
+            DataTable dataTable = new DataTable();
+            string query = "select * from chitietphieuthue";
+            using (SqlConnection sqlConnection = Connection.GetSqlConnection())
+            {
+                sqlConnection.Open();
+                dataAdapter = new SqlDataAdapter(query, sqlConnection);
+                dataAdapter.Fill(dataTable);
+
+                sqlConnection.Close();
+            }
+            return dataTable;
+        }
+        public DataTable GetAllPhieuThue()
+        {
+            DataTable dataTable = new DataTable();
+            string query = "select * from thue";
+            using (SqlConnection sqlConnection = Connection.GetSqlConnection())
+            {
+                sqlConnection.Open();
+                dataAdapter = new SqlDataAdapter(query, sqlConnection);
+                dataAdapter.Fill(dataTable);
+
+                sqlConnection.Close();
+            }
+            return dataTable;
+        }
 
         public bool insert(SanPham sanPham)
         {
@@ -202,5 +230,148 @@ namespace QLThue
             }
             return true;
         }
+        public bool insert(TTChoThue tTChoThue)
+        {
+            SqlConnection sqlConnection = Connection.GetSqlConnection();
+            string query = "insert into chitietphieuthue values (@chitietphieuthue,@sophieu,@masp,@soluong,@hoadon)";
+            try
+            {
+                sqlConnection.Open();
+                sqlCommand = new SqlCommand(query, sqlConnection);
+                sqlCommand.Parameters.Add("@chitietphieuthue", SqlDbType.Int).Value = tTChoThue.Ctpt;
+                sqlCommand.Parameters.Add("@sophieu", SqlDbType.Int).Value = tTChoThue.Idphieu;
+                sqlCommand.Parameters.Add("@masp", SqlDbType.Int).Value = tTChoThue.Idsp;
+                sqlCommand.Parameters.Add("@soluong", SqlDbType.Int).Value = tTChoThue.Soluong;
+                sqlCommand.Parameters.Add("@hoadon", SqlDbType.Decimal).Value = tTChoThue.Bill;
+                sqlCommand.ExecuteNonQuery();//thực thi lệnh truy vấn
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
+            return true;
+        }
+        public bool update(TTChoThue tTChoThue)
+        {
+            SqlConnection sqlConnection = Connection.GetSqlConnection();
+            string query = "update chitietphieuthue set sophieu = @sophieu, masp = @masp, soluong = @soluong, hoadon = @hoadon Where chitietphieuthue = @chitietphieuthue)";
+            try
+            {
+                sqlConnection.Open();
+                sqlCommand = new SqlCommand(query, sqlConnection);
+                sqlCommand.Parameters.Add("@chitietphieuthue", SqlDbType.Int).Value = tTChoThue.Ctpt;
+                sqlCommand.Parameters.Add("@sophieu", SqlDbType.Int).Value = tTChoThue.Idphieu;
+                sqlCommand.Parameters.Add("@masp", SqlDbType.Int).Value = tTChoThue.Idsp;
+                sqlCommand.Parameters.Add("@soluong", SqlDbType.Int).Value = tTChoThue.Soluong;
+                sqlCommand.Parameters.Add("@hoadon", SqlDbType.Decimal).Value = tTChoThue.Bill;
+                sqlCommand.ExecuteNonQuery();//thực thi lệnh truy vấn
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
+            return true;
+        }
+        public bool deletectpt(string id)
+        {
+            SqlConnection sqlConnection = Connection.GetSqlConnection();
+            string query = "delete chitietphieuthue Where chitietphieuthue = @chitietphieuthue";
+            try
+            {
+                sqlConnection.Open();
+                sqlCommand = new SqlCommand(query, sqlConnection);
+                sqlCommand.Parameters.Add("@chitietphieuthue", SqlDbType.Int).Value = id;
+                sqlCommand.ExecuteNonQuery();//thực thi lệnh truy vấn
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
+            return true;
+        }
+        public bool insert(Thuê thuê)
+        {
+            SqlConnection sqlConnection = Connection.GetSqlConnection();
+            string query = "insert into thue values (@sophieu,@makh,@ngaychothue,@ngaytra,@tientradutinh)";
+            try
+            {
+                sqlConnection.Open();
+                sqlCommand = new SqlCommand(query, sqlConnection);               
+                sqlCommand.Parameters.Add("@sophieu", SqlDbType.Int).Value = thuê.Id;
+                sqlCommand.Parameters.Add("@makh", SqlDbType.Int).Value = thuê.Idkh;
+                sqlCommand.Parameters.Add("@ngaychothue", SqlDbType.NVarChar).Value = thuê.Datego.ToShortDateString();
+                sqlCommand.Parameters.Add("@ngaytra", SqlDbType.NVarChar).Value = thuê.Dateback.ToShortDateString();
+                sqlCommand.Parameters.Add("@tientradutinh", SqlDbType.Decimal).Value = thuê.Bill;
+                sqlCommand.ExecuteNonQuery();//thực thi lệnh truy vấn
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
+            return true;
+        }
+        public bool update(Thuê thuê)
+        {
+            SqlConnection sqlConnection = Connection.GetSqlConnection();
+            string query = "update thue set  makh = @makh, ngaychothue = @ngaychothue, ngaytra = @ngaytra, tientradutinh = @tientradutinh  Where sophieu = @sophieu)";
+            try
+            {
+                sqlConnection.Open();
+                sqlCommand.Parameters.Add("@sophieu", SqlDbType.Int).Value = thuê.Id;
+                sqlCommand.Parameters.Add("@makh", SqlDbType.Int).Value = thuê.Idkh;
+                sqlCommand.Parameters.Add("@ngaychothue", SqlDbType.NVarChar).Value = thuê.Datego.ToShortDateString();
+                sqlCommand.Parameters.Add("@ngaytra", SqlDbType.NVarChar).Value = thuê.Dateback.ToShortDateString();
+                sqlCommand.Parameters.Add("@tientradutinh", SqlDbType.Decimal).Value = thuê.Bill;
+                sqlCommand.ExecuteNonQuery();//thực thi lệnh truy vấn
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
+            return true;
+        }
+        public bool deletethue(string id)
+        {
+            SqlConnection sqlConnection = Connection.GetSqlConnection();
+            string query = "delete thue Where sophioeu = @sophieu";
+            try
+            {
+                sqlConnection.Open();
+                sqlCommand = new SqlCommand(query, sqlConnection);
+                sqlCommand.Parameters.Add("@sophieu", SqlDbType.Int).Value = id;
+                sqlCommand.ExecuteNonQuery();//thực thi lệnh truy vấn
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
+            return true;
+        }
     }
+        
+        
 }

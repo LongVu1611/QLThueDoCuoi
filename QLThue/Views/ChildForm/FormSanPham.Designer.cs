@@ -166,7 +166,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 252);
+            this.label4.Location = new System.Drawing.Point(-1, 252);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(180, 20);
             this.label4.TabIndex = 12;
@@ -214,7 +214,7 @@
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(645, 412);
+            this.dataGridView1.Size = new System.Drawing.Size(728, 412);
             this.dataGridView1.TabIndex = 16;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -222,7 +222,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1098, 493);
+            this.BackColor = System.Drawing.SystemColors.Info;
+            this.BackgroundImage = global::QLThue.Properties.Resources.nsQC9w;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1159, 493);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -240,6 +243,7 @@
             this.Controls.Add(this.Fix);
             this.Controls.Add(this.Delete);
             this.Controls.Add(this.Add);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "FormSanPham";
             this.Text = "SanPham";
             this.Load += new System.EventHandler(this.SanPham_Load);

@@ -52,6 +52,8 @@
     <Compile Include="Modify.cs" />
     <Compile Include="SanPham.cs" />
     <Compile Include="TaiKhoan.cs" />
+    <Compile Include="Thuê.cs" />
+    <Compile Include="TTChoThue.cs" />
     <Compile Include="Views\ChildForm\FormKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,8 +95,14 @@
     <EmbeddedResource Include="Views\ChildForm\FormKhachHang.resx">
       <DependentUpon>FormKhachHang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\ChildForm\FormPhieuThue.resx">
+      <DependentUpon>FormPhieuThue.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\ChildForm\FormSanPham.resx">
       <DependentUpon>FormSanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ChildForm\FormTTChoThue.resx">
+      <DependentUpon>FormTTChoThue.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -130,6 +138,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\hutao.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6681204.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lumine.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\10000007.48e72913..png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nsQC9w.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

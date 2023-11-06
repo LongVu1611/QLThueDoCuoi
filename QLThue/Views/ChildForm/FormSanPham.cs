@@ -75,6 +75,7 @@ namespace QLThue.Views.ChildForm
             if(modify.insert(sanPham) )
             {
                 dataGridView1.DataSource = modify.GetAllSanPham();
+                MessageBox.Show("Hoàn tất: " + "Đã thêm sản phẩm thành công ", "Thêm sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -94,6 +95,7 @@ namespace QLThue.Views.ChildForm
             if (modify.update(sanPham))
             {
                 dataGridView1.DataSource = modify.GetAllSanPham();
+                MessageBox.Show("Hoàn tất: " + "Sửa sản phẩm thành công ", "Sửa sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -107,6 +109,7 @@ namespace QLThue.Views.ChildForm
             if(modify.delete(id))
             {
                 dataGridView1.DataSource = modify.GetAllSanPham();
+                MessageBox.Show("Hoàn tất: " + "Đã xoá sản phẩm thành công ", "Xoá sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
